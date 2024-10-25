@@ -732,7 +732,7 @@ SOFTWARE.
 
 
     function pack(mark, array) {
-        if (!(array instanceof Array)) {
+        if (typeof array[Symbol.iterator] !== 'function') {
             throw new Error("'pack' error. Got invalid type argument.");
         }
         if ((mark.length - 1) != array.length) {
